@@ -1,5 +1,32 @@
 body{
     font-family: 'ssf4', Courier, monospace;
     background: var(--cor-secundaria);
+}
 
+body::before{
+    content: '';
+    background-image: url(../img/1cYrMYF.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hdr{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hdr .title{
+    color: white;
 }
