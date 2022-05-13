@@ -1,5 +1,5 @@
 body{
     font-family: 'ssf4', Courier, monospace;
-    background: var();
+    background: var(--cor-secundaria);
 
 }
