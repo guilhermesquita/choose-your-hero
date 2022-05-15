@@ -23,7 +23,7 @@ main{
 
 .hdr{
     z-index: 1;
-    display: flex;
+    display: flex;    
     justify-content: center;
 }
 
@@ -32,5 +32,125 @@ main{
     text-transform: uppercase;
     font-size: 52px;
     line-height: 102px;
-    -webkit-text-stroke: 2px var(--cor-titulo-forte) ;
+    -webkit-text-stroke: 2px var(--cor-titulo-forte);
+}
+
+.selection-characters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selection-characters .character-great{
+    text-align: center;
+    width: 30%;
+    height: 70vh;
+    position: relative;
+}
+
+.selection-characters .character-great img{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
+.selection-characters .character-great .name::before{
+    content: '';
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    left: 0;    
+}
+
+.selection-characters .character-great .name h2{
+    color: var(--cor-padrao);
+    font-family: 'command', sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 27px;
+}
+
+.selection-characters .character-great.character-player-1 .name::before{
+    background-color: var(--cor-azul-principal);
+}
+
+.selection-characters .character-great.character-player-2 .name::before{
+    background-color: var(--cor-vermelha-principal);
+}
+
+.selection-characters .list-characters{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    justify-content: center;
+    gap: 12px;
+}
+
+.selection-characters .list-characters .character{
+    border: 2px solid var(--cor-padrao);
+    background-color: var(--cor-padrao);
+    width: 30%;
+    height: 160px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.15s ease-in-out;
+}
+
+.selection-characters .list-characters .character img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.selection-characters .list-characters .character .selected{
+    border: 2px solid var(--cor-azul-media);
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selection-characters .list-characters .character:hover{
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    transform: scale(1.07);
+    z-index: 2;
+}
+
+.selection-characters .list-characters .character .player-2-selected .selected{
+    border: 2px solid var(--cor-vermelha-fraca);
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selection-characters .list-characters .character .player-2-selected:hover{
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selection-characters .list-characters .character .tag{
+    display: none;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--cor-azul-media);
+    transition: opacity .3 ease-in-out;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selection-characters .list-characters .character .selected .tag{
+    display: block;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selection-characters .list-characters .character .player-2-selected .tag{
+    display: block;
+    animation: text-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
 }
